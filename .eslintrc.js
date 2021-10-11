@@ -15,6 +15,8 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
+    'no-return-assign': 0,
+    semi: [2, 'always'],
     'no-undef': 0
   }
-}
+};

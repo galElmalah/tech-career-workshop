@@ -15,6 +15,6 @@ interface Coordinates {
  * Decode the path and return the end coordinates :)
  */
 export const robotPath = (path: string): Coordinates => {
-  const cords = { x: 0, y: 0 }
-  return cords
-}
+  const cords = { x: 0, y: 0 };
+  return cords;
+};

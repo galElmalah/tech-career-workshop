@@ -38,13 +38,17 @@ describe('Strings', () => {
   });
 
   describe('isBalancedParenthesis', () => {
-    it('Returns true for balanced parenthesis', () => {
-      const testCases = ['()', '[()]', '[()]{}{[()()]()}'];
+    it('Returns true for a simple case ()', () => {
+      expect(isBalancedParenthesis('()')).toBe(true);
+    });
+
+    it('Returns true for more complex cases', () => {
+      const testCases = ['[()]{}', '([{}]{()})', '[()]{}{[()()]()}'];
       testCases.forEach((testCase) => expect(isBalancedParenthesis(testCase)).toBe(true));
     });
 
     it('Returns false for unbalanced parenthesis', () => {
-      const testCases = ['((', '[', '([()]{}('];
+      const testCases = ['((', '[', '([()]{}(', '[(])'];
       testCases.forEach((testCase) => expect(isBalancedParenthesis(testCase)).toBe(false));
     });
   });

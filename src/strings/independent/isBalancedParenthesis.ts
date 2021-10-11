@@ -9,6 +9,7 @@
  * @example [{}]() balanced
  * @example [{} not balanced (missing "]")
  * @example ([{}]() not balanced (missing a closing "(" for the first paren)
+ * Detailed solution: https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
  */
 export const isBalancedParenthesis = (expression: string) => {
 

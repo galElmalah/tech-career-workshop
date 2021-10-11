@@ -15,6 +15,21 @@ interface Coordinates {
  * Decode the path and return the end coordinates :)
  */
 export const robotPath = (path: string): Coordinates => {
-  const cords = { x: 0, y: 0 };
-  return cords;
+  const steps = path.split('');
+
+  const coords = { x: 0, y: 0 };
+
+  const actions = {
+    U: () => coords.y += 1,
+    D: () => coords.y -= 1,
+    R: () => coords.x += 1,
+    L: () => coords.x -= 1
+  };
+
+  while (steps.length) {
+    const currentStep = steps.shift();
+    actions[currentStep]();
+  }
+
+  return coords;
 };

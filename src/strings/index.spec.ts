@@ -1,4 +1,6 @@
-import { isPalindrome, isAnagram, capitalize, isBalancedParenthesis, robotPath } from '.';
+import { isPalindrome, isAnagram, capitalize, isBalancedParenthesis, robotPath, howManyGoldBags } from '.';
+import * as fs from 'fs';
+import { join } from 'path';
 
 describe('Strings', () => {
   describe('isAnagram', () => {
@@ -86,6 +88,26 @@ describe('Strings', () => {
     it('should get the robot to the right coordinates', () => {
       const path = 'DDUUUUULLRLLRLDLRDDD';
       expect(robotPath(path)).toEqual({ x: -3, y: -1 });
+    });
+  });
+
+  describe('bonus', () => {
+    it('Returns 4 for the example input', () => {
+      const testInput = `light red bags contain 1 bright white bag, 2 muted yellow bags.
+      dark orange bags contain 3 bright white bags, 4 muted yellow bags.
+      bright white bags contain 1 shiny gold bag.
+      muted yellow bags contain 2 shiny gold bags, 9 faded blue bags.
+      shiny gold bags contain 1 dark olive bag, 2 vibrant plum bags.
+      dark olive bags contain 3 faded blue bags, 4 dotted black bags.
+      vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
+      faded blue bags contain no other bags.
+      dotted black bags contain no other bags.`;
+      expect(howManyGoldBags(testInput)).toBe(4);
+    });
+
+    it('Returns 192 for the actual input', () => {
+      const testInput = fs.readFileSync(join(__dirname, '/independent/bonus-input.txt'), 'utf-8');
+      expect(howManyGoldBags(testInput)).toBe(192);
     });
   });
 });

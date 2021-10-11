@@ -11,7 +11,7 @@ interface Coordinates {
  *
  * Your path decoder somehow got broken when you landed on mars but luckily enough you can re programme yourself and create a new decoder
  *
- * You can assume that your starting point is 0,0.
+ * You can assume that your starting point is 0,0 and that you are walking on a 2d plane.
  * Decode the path and return the end coordinates :)
  */
 export const robotPath = (path: string): Coordinates => {

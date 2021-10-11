@@ -11,3 +11,10 @@ to focus on specific tests choose the `t` option in jest menu and type the name 
 For example to focus on `isAnagram` question typing `isAna` is enough...
 
 Start coding your solutions!
+
+## Recommended order
+
+1. isPalindrome
+2. isAnagram
+3. bonus / isBalancesParenthesis
+4. bonus / isBalancesParenthesis

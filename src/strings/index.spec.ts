@@ -1,4 +1,4 @@
-import {isPalindrome, isAnagram, capitalize} from '.'
+import {isPalindrome, isAnagram, capitalize, isBalancedParenthesis} from '.'
 
 describe('Strings', () => {
   describe('isAnagram', () => {
@@ -35,17 +35,24 @@ describe('Strings', () => {
     it('Change the first char in a word to be upper case', () => {
       const sentence = 'im a sentence'
       const word = 'word'
-      expect(capitalize(sentence)).toBe('Im a word')
+      expect(capitalize(sentence)).toBe('Im a sentence')
       expect(capitalize(word)).toBe('Word')
     })
   })
 
-  describe('robotPath', () => {
-    it('Change the first char in a word to be upper case', () => {
-      const sentence = 'im a sentence'
-      const word = 'word'
-      expect(capitalize(sentence)).toBe('Im a word')
-      expect(capitalize(word)).toBe('Word')
+  describe('isBalancedParenthesis', () => {
+    it('Returns true for balanced parenthesis', () => {
+      const testCases = ['()','[()]', '[()]{}{[()()]()}']
+      testCases.forEach((testCase) => expect(isBalancedParenthesis(testCase)).toBe(true))
     })
+
+    it('Returns false for unbalanced parenthesis', () => {
+      const testCases = ['((','[', '([()]{}(']
+      testCases.forEach((testCase) => expect(isBalancedParenthesis(testCase)).toBe(false))
+    })
+  })
+
+  describe('robotPath', () => {
+
   })
 })

@@ -1,2 +1,3 @@
-export * from './isAnagram'
-export * from './isPalindrome'
+export * from './independent/isAnagram'
+export * from './independent/isPalindrome'
+export * from './intro/capitalize'

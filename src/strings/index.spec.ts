@@ -1,4 +1,4 @@
-import {isPalindrome, isAnagram} from '.'
+import {isPalindrome, isAnagram, capitalize} from '.'
 
 describe('Strings', () => {
   describe('isAnagram', () => {
@@ -28,6 +28,24 @@ describe('Strings', () => {
     it('returns false for strings that are not palindromes', () => {
       const testCases = ['woww', 'annaf','some string']
       testCases.forEach((testCase) => expect(isPalindrome(testCase)).toBe(false))
+    })
+  })
+
+  describe('capitalize', () => {
+    it('Change the first char in a word to be upper case', () => {
+      const sentence = 'im a sentence'
+      const word = 'word'
+      expect(capitalize(sentence)).toBe('Im a word')
+      expect(capitalize(word)).toBe('Word')
+    })
+  })
+
+  describe('robotPath', () => {
+    it('Change the first char in a word to be upper case', () => {
+      const sentence = 'im a sentence'
+      const word = 'word'
+      expect(capitalize(sentence)).toBe('Im a word')
+      expect(capitalize(word)).toBe('Word')
     })
   })
 })

@@ -1,3 +1,15 @@
+function createGraph (input: string) {
+  const g = {};
+  input.split('\n').forEach((rule) => {
+    const [bag, contains] = rule.split(' bags contain ');
+    g[bag.trim()] = {};
+    (contains.match(/\b\d+ \w+ \w+\b/g) || []).forEach((amount) => {
+      const [, num, color] = amount.match(/(\d+) (\w+ \w+)/);
+      g[bag.trim()][color] = parseInt(num);
+    });
+  });
+  return g;
+}
 
 /**
 * This question is taken from day 7 of AOC 2020 https://adventofcode.com/2020/day/7
@@ -33,8 +45,19 @@ IT IS HIGHLY RECOMMENDED TO GO AND READ THE QUESTION ON THE WEBSITE!
 * How many bag colors can eventually contain at least one shiny gold bag?
 *  */
 
-// HINT: create a graph from the input that points from each bag to teh bags he carries -> blue: { red: 3, white:4, gold: 1}, red: { gold: 10 } etc...
-
 export const howManyGoldBags = (input: string) => {
+  const graph = createGraph(input);
+  return Object.keys(graph).reduce((acc, bagColor) => {
+    return acc + (canCarryAtLeastOneGoldBag(graph, bagColor) ? 1 : 0);
+  }, 0);
+};
 
+const canCarryAtLeastOneGoldBag = (graph, bagColor) => {
+  if (!graph[bagColor]) return false;
+
+  if (graph[bagColor]['shiny gold']) return true;
+
+  return Object.keys(graph[bagColor]).some((_bagColor) =>
+    canCarryAtLeastOneGoldBag(graph, _bagColor)
+  );
 };

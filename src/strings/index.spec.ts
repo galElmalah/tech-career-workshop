@@ -1,4 +1,4 @@
-import {isPalindrome, isAnagram, capitalize, isBalancedParenthesis} from '.'
+import {isPalindrome, isAnagram, capitalize, isBalancedParenthesis, robotPath} from '.'
 
 describe('Strings', () => {
   describe('isAnagram', () => {
@@ -53,6 +53,38 @@ describe('Strings', () => {
   })
 
   describe('robotPath', () => {
+    it('should get the robot back to 0,0', () => {
+      const path = 'UURRDDLL'
+      const upAndDown = 'UUDD'
+      const rightAndLeft = 'RRLL'
+      expect(robotPath(path)).toEqual({x:0,y:0})
+      expect(robotPath(upAndDown)).toEqual({x:0,y:0})
+      expect(robotPath(rightAndLeft)).toEqual({x:0,y:0})
+    })
 
+    it('should go to the right', () => {
+      const rightPath = 'RRRRRRRRR'
+      expect(robotPath(rightPath)).toEqual({x:rightPath.length,y:0})
+    })
+
+    it('should go to the left', () => {
+      const leftPath = 'LLLLLLLL'
+      expect(robotPath(leftPath)).toEqual({x:-leftPath.length,y:0})
+    })
+
+    it('should go up', () => {
+      const upPath = 'UUUUUUU'
+      expect(robotPath(upPath)).toEqual({x:0,y:upPath.length})
+    })
+
+    it('should go down', () => {
+      const downPath = 'DDDDDD'
+      expect(robotPath(downPath)).toEqual({x:0,y: -downPath.length})
+    })
+
+    it('should get the robot to the right coordinates', () => {
+      const path = 'DDUUUUULLRLLRLDLRDDD'
+      expect(robotPath(path)).toEqual({x:-3,y: -1})
+    })
   })
 })

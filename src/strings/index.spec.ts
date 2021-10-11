@@ -24,8 +24,12 @@ describe('Strings', () => {
 
   describe('isPalindrome', () => {
     it('returns true for palindromes', () => {
-      const testCases = ['wow', 'anna', 'repaper'];
+      const testCases = ['wow', 'anna', 'repaper', 'mom', 'dad', 'abbccbba', '1122332211', ''];
       testCases.forEach((testCase) => expect(isPalindrome(testCase)).toBe(true));
+    });
+
+    it('returns true for empty strings', () => {
+      expect(isPalindrome('')).toBe(true);
     });
 
     it('returns false for strings that are not palindromes', () => {

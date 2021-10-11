@@ -3,7 +3,13 @@
 
 // Input: exp = “[(])” 
 // Output: Not Balanced 
-
-export const isBalancedParenthesis = (parenthesis: string) => {
+/**
+ * 
+ * Given an expression that is composed of 3 kinds of parenthesis "(","{" and "[", determine if the parenthesis are balanced.
+ * @example [{}]() balanced
+ * @example [{} not balanced (missing "]")
+ * @example ([{}]() not balanced (missing a closing "(" for the first paren)
+ */
+export const isBalancedParenthesis = (expression: string) => {
 
 }

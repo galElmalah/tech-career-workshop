@@ -3,7 +3,7 @@ import {isPalindrome, isAnagram, capitalize, isBalancedParenthesis} from '.'
 describe('Strings', () => {
   describe('isAnagram', () => {
     it('returns true for anagrams', () => {
-      const testCases = [['im', 'mi'], ['abcccmlk', 'ccmlkabc'], ['some', 'mose']]
+      const testCases = [['im', 'mi'], ['abcccmlk', 'ccmlkabc'], ['some', 'mose'], ['New York Times' ,'monkeys write']]
       testCases.forEach(([a,b]) => expect(isAnagram(a,b)).toBe(true))
     })
 

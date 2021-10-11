@@ -13,5 +13,23 @@
  * Detailed solution: https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
  */
 export const isBalancedParenthesis = (expression: string) => {
+  const stack = [];
+  const parenthesisMap = {
+    '(': ')',
+    '[': ']',
+    '{': '}'
+  };
 
+  for (const paren of expression.split('')) {
+    if (parenthesisMap[paren]) {
+      stack.push(paren);
+      continue;
+    }
+
+    if (paren !== parenthesisMap[stack.pop()]) {
+      return false;
+    }
+  }
+
+  return stack.length === 0;
 };

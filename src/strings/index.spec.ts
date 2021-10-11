@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import { isPalindrome, isAnagram, capitalize, isBalancedParenthesis, robotPath, howManyGoldBags } from '.';
 import * as fs from 'fs';
 import { join } from 'path';
-=======
-import { isPalindrome, isAnagram, capitalize, isBalancedParenthesis, robotPath } from '.';
->>>>>>> robot path solution
 
 describe('Strings', () => {
   describe('isAnagram', () => {
@@ -24,12 +20,8 @@ describe('Strings', () => {
 
   describe('isPalindrome', () => {
     it('returns true for palindromes', () => {
-      const testCases = ['wow', 'anna', 'repaper', 'mom', 'dad', 'abbccbba', '1122332211', ''];
+      const testCases = ['wow', 'anna', 'repaper'];
       testCases.forEach((testCase) => expect(isPalindrome(testCase)).toBe(true));
-    });
-
-    it('returns true for empty strings', () => {
-      expect(isPalindrome('')).toBe(true);
     });
 
     it('returns false for strings that are not palindromes', () => {
@@ -48,26 +40,17 @@ describe('Strings', () => {
   });
 
   describe('isBalancedParenthesis', () => {
-<<<<<<< HEAD
     it('Returns true for a simple case ()', () => {
       expect(isBalancedParenthesis('()')).toBe(true);
     });
 
     it('Returns true for more complex cases', () => {
       const testCases = ['[()]{}', '([{}]{()})', '[()]{}{[()()]()}'];
-=======
-    it('Returns true for balanced parenthesis', () => {
-      const testCases = ['()', '[()]', '[()]{}{[()()]()}'];
->>>>>>> robot path solution
       testCases.forEach((testCase) => expect(isBalancedParenthesis(testCase)).toBe(true));
     });
 
     it('Returns false for unbalanced parenthesis', () => {
-<<<<<<< HEAD
       const testCases = ['((', '[', '([()]{}(', '[(])'];
-=======
-      const testCases = ['((', '[', '([()]{}('];
->>>>>>> robot path solution
       testCases.forEach((testCase) => expect(isBalancedParenthesis(testCase)).toBe(false));
     });
   });

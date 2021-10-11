@@ -8,12 +8,13 @@ interface Coordinates {
  * D: move down 1 step
  * R: move right 1 step
  * L: move left 1 step
- * 
+ *
  * Your path decoder somehow got broken when you landed on mars but luckily enough you can re programme yourself and create a new decoder
- * 
- * You can assume that your starting point is 0,0. 
- * Decode the path and return the end coordinates :) 
+ *
+ * You can assume that your starting point is 0,0.
+ * Decode the path and return the end coordinates :)
  */
-export const robotPath = (path:string): Coordinates => {
-
+export const robotPath = (path: string): Coordinates => {
+  const cords = { x: 0, y: 0 }
+  return cords
 }

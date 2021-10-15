@@ -9,6 +9,6 @@
     "lib": ["es6"],
     "skipLibCheck": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/recursion/independent/fibonacci.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
